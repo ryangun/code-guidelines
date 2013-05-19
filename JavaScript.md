@@ -1282,11 +1282,6 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='thanks'>致谢</a>
-
-  - [airbnb/javascript](https://github.com/airbnb/javascript/)
-
-
 ## <a name='license'>License</a>
 
 (The MIT License)

@@ -28,8 +28,6 @@
     * [选择器](#selectors)
   * [JavaScript钩子](#javascript-hooks)
   * [代码组织](#organization)
-* [致谢](#thanks)
-
 
 
 ----------
@@ -340,15 +338,3 @@ span { ... }
 * 逻辑上对不同的代码进行分离
 * 不同的组件(component)的css尽量用不同的css文件（可以在build阶段用工具合并到一起）
 * 如果用到了预处理器（比如less），把一些公共的样式代码抽象成变量，例如颜色，字体等等
-
-
-
-----------
-
-
-
-## 致谢
-<h2 id="thanks"></h2>
-
-* [mdo/code-guide](https://github.com/mdo/code-guide)
-* [Idiomatic CSS](https://github.com/necolas/idiomatic-css)

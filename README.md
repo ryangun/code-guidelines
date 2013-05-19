@@ -1,9 +1,17 @@
 ## 目录
+
 * [HTML和CSS](HTML-and-CSS.md)
 * [JavaScript](JavaScript.md)
 * [PHP](PHP.md)
 
+## 致谢
+
+* [mdo/code-guide](https://github.com/mdo/code-guide)
+* [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+* [airbnb/javascript](https://github.com/airbnb/javascript/)
+
 ## The MIT License (MIT)
+
 Copyright (c) 2013 AirCoding Team  
 http://aircoding.com/
 
