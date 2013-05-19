@@ -1,9 +1,14 @@
 # JavaScript编码指导
 
-*A mostly reasonable approach to JavaScript*
+A mostly reasonable approach to JavaScript
 
 
-## <a name='TOC'>目录</a>
+
+----------
+
+
+
+## 目录
 
   1. [类型](#types)
   1. [对象](#objects)
@@ -27,9 +32,9 @@
   1. [jQuery](#jquery)
   1. [License](#license)
 
-## <a name='types'>类型</a>
+<h2 id="types">类型</h2>
 
-  - **基本类型**： 获取一个基本类型的的时候，你得到的是值本身
+- **基本类型**： 获取一个基本类型的的时候，你得到的是值本身
 
     + `string`
     + `number`
@@ -37,114 +42,108 @@
     + `null`
     + `undefined`
 
-    ```javascript
-    var foo = 1,
-        bar = foo;
+```javascript
+var foo = 1,
+    bar = foo;
 
-    bar = 9;
+bar = 9;
 
-    console.log(foo, bar); // => 1, 9
-    ```
-  - **复合类型**： 获取一个复合类型的时候，你得到是值的引用
+console.log(foo, bar); // => 1, 9
+```
+- **复合类型**： 获取一个复合类型的时候，你得到是值的引用
 
     + `object`
     + `array`
     + `function`
 
-    ```javascript
-    var foo = [1, 2],
-        bar = foo;
+```javascript
+var foo = [1, 2],
+    bar = foo;
 
-    bar[0] = 9;
+bar[0] = 9;
 
-    console.log(foo[0], bar[0]); // => 9, 9
-    ```
+console.log(foo[0], bar[0]); // => 9, 9
+```
 
-    **[[⬆]](#TOC)**
+<h2 id="objects">对象</h2>
 
-## <a name='objects'>对象</a>
+- 使用literal语法创建对象
 
-  - 使用literal语法创建对象
+```javascript
+// bad
+var item = new Object();
 
-    ```javascript
-    // bad
-    var item = new Object();
+// good
+var item = {};
+```
 
-    // good
-    var item = {};
-    ```
+- 不要使用[保留字](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words)作为键
 
-  - 不要使用[保留字](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words)作为键
+```javascript
+// bad
+var superman = {
+  class: 'superhero',
+  default: { clark: 'kent' },
+  private: true
+};
 
-    ```javascript
-    // bad
-    var superman = {
-      class: 'superhero',
-      default: { clark: 'kent' },
-      private: true
-    };
-
-    // good
-    var superman = {
-      klass: 'superhero',
-      defaults: { clark: 'kent' },
-      hidden: true
-    };
-    ```
-    **[[⬆]](#TOC)**
+// good
+var superman = {
+  klass: 'superhero',
+  defaults: { clark: 'kent' },
+  hidden: true
+};
+```
 
 ## <a name='arrays'>数组</a>
 
-  - 使用literal语法创建数组
+- 使用literal语法创建数组
 
-    ```javascript
-    // bad
-    var items = new Array();
+```javascript
+// bad
+var items = new Array();
 
-    // good
-    var items = [];
-    ```
+// good
+var items = [];
+```
 
-  - 不知道数组的长度的时候使用Array#push
+- 不知道数组的长度的时候使用Array#push
 
-    ```javascript
-    var someStack = [];
+```javascript
+var someStack = [];
 
 
-    // bad
-    someStack[someStack.length] = 'abracadabra';
+// bad
+someStack[someStack.length] = 'abracadabra';
 
-    // good
-    someStack.push('abracadabra');
-    ```
+// good
+someStack.push('abracadabra');
+```
 
-  - 需要复制一个数组的时候使用Array#slice [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+- 需要复制一个数组的时候使用Array#slice [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
-    ```javascript
-    var len = items.length,
-        itemsCopy = [],
-        i;
+```javascript
+var len = items.length,
+    itemsCopy = [],
+    i;
 
-    // bad
-    for (i = 0; i < len; i++) {
-      itemsCopy[i] = items[i];
-    }
+// bad
+for (i = 0; i < len; i++) {
+  itemsCopy[i] = items[i];
+}
 
-    // good
-    itemsCopy = items.slice();
-    ```
+// good
+itemsCopy = items.slice();
+```
 
-  - 将array-like的对象转换成数组时，使用Array#slice
-  - 
+- 将array-like的对象转换成数组时，使用Array#slice
 
-    ```javascript
-    function trigger() {
-      var args = Array.prototype.slice.call(arguments);
-      ...
-    }
-    ```
-
-    **[[⬆]](#TOC)**
+```javascript
+function trigger() {
+  var args = Array.prototype.slice.call(arguments);
+  ...
+}
+```
 
 
 ## <a name='strings'>字符串</a>

@@ -9,32 +9,32 @@
 
 ## 目录
 
-* [黄金法则](#golden-rule)
-* [HTML](#html)
-  * [HTML语法](#html-syntax)
-  * [HTML5 doctype](#html5-doctype)
-  * [实用大于语义](#pragmatism-over-semantics)
-  * [属性顺序](#attribute-order)
-  * [JavaScript生成标签](#javascript-generated markup)
-* [CSS](#css)
-  * [CSS语法](#css-syntax)
-  * [声明顺序](#declaration-order)
-  * [细微偏移原则的情况](#formatting-exceptions)
-    * [带前缀的属性](#prefixed-properties)
-    * [大量包含单条声明的声明块](#rules-with-single-declarations)
-  * [可读性](#human-readable)
-    * [注释](#comments)
-    * [class名](#classes)
-    * [选择器](#selectors)
-  * [JavaScript钩子](#javascript-hooks)
-  * [代码组织](#organization)
+* [1. 黄金法则](#golden-rule)
+* [2. HTML](#html)
+    * [2-1. HTML语法](#html-syntax)
+    * [2-2. HTML5 doctype](#html5-doctype)
+    * [2-3. 实用大于语义](#pragmatism-over-semantics)
+    * [2-4. 属性顺序](#attribute-order)
+    * [2-5. JavaScript生成标签](#javascript-generated markup)
+* [3. CSS](#css)
+    * [3-1. CSS语法](#css-syntax)
+    * [3-2. 声明顺序](#declaration-order)
+    * [3-3. 细微偏移原则的情况](#formatting-exceptions)
+        * [3-3-1. 带前缀的属性](#prefixed-properties)
+        * [3-3-2. 大量包含单条声明的声明块](#rules-with-single-declarations)
+    * [3-4. 可读性](#human-readable)
+        * [3-4-1. 注释](#comments)
+        * [3-4-2. class名](#classes)
+        * [3-4-3. 选择器](#selectors)
+    * [3-5. JavaScript钩子](#javascript-hooks)
+    * [3-6. 代码组织](#organization)
 
 
 ----------
 
 
 
-<h2 id="golden-rule">黄金法则</h2>
+<h2 id="golden-rule">1. 黄金法则</h2>
 
 > 在任何代码库中，无论有多少人参与及贡献，所有代码都应该如同一个人编写的一样。
 
@@ -46,10 +46,10 @@
 
 
 
-<h2 id="html">HTML</h2>
+<h2 id="html">2. HTML</h2>
 
 
-<h3 id="html-syntax">HTML语法</h3>
+<h3 id="html-syntax">2-1. HTML语法</h3>
 
 * 使用两个空格长度的软缩进（使用空格缩进）
 * 嵌套的元素应该被缩进一次（两个空格）
@@ -59,7 +59,7 @@
 
 **不正确的例子：**
 
-````html
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,11 +70,11 @@
 <h1 class='hello-world'>Hello, world!</h1>
 </body>
 </html>
-````
+```
 
 **正确的例子：**
 
-````html
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -85,24 +85,24 @@
     <h1 class="hello-world">Hello, world!</h1>
   </body>
 </html>
-````
+```
 
 
-<h3 id="html5-doctype">HTML5 doctype</h3>
+<h3 id="html5-doctype">2-2. HTML5 doctype</h3>
 
 在每个HTML页面前面包含下面的doctype声明，尽可能地强制每个浏览器使用标准模式
 
-````html
+```html
 <!DOCTYPE html>
-````
+```
 
 
-<h3 id="pragmatism-over-semantics">实用大于语义</h3>
+<h3 id="pragmatism-over-semantics">2-3. 实用大于语义</h3>
 
 努力保持HTML的标准和语义，但不要以牺牲实用为代价。使用尽可能少的标签和尽量避免复杂。
 
 
-<h3 id="attribute-order">属性顺序</h3>
+<h3 id="attribute-order">2-4. 属性顺序</h3>
 
 为了便于阅读代码，HTML属性应该按照特定的顺序书写
 
@@ -113,11 +113,11 @@
 
 因此你的代码看起来像：
 
-````html
+```html
 <a class="" id="" data-modal="" href="">Example link</a>
-````
+```
 
-<h3 id="javascript-generated markup">JavaScript生成标签</h3>
+<h3 id="javascript-generated markup">2-5. JavaScript生成标签</h3>
 
 在javascript中生成标签让其难以查找、编辑和性能变差。因此，别这样做。
 
@@ -127,9 +127,9 @@
 
 
 
-<h2 id="css">CSS</h2>
+<h2 id="css">3. CSS</h2>
 
-<h3 id="css-syntax">CSS语法</h3>
+<h3 id="css-syntax">3-1. CSS语法</h3>
 
 * 使用两个空格长度的软缩进（使用空格缩进）
 * 使用分组选择器时，每个单独的选择器独占一行
@@ -148,18 +148,18 @@
 
 **不正确的例子：**
 
-````css
+```css
 .selector, .selector-secondary, .selector[type=text] {
   padding:15px;
   margin:0px 0px 15px;
   background-color:rgba(0, 0, 0, 0.5);
   box-shadow:0 1px 2px #CCC,inset 0 1px 0 #FFFFFF
 }
-````
+```
 
 **正确的例子**
 
-````css
+```css
 .selector,
 .selector-secondary,
 .selector[type="text"] {
@@ -168,14 +168,14 @@
   background-color: rgba(0,0,0,.5);
   box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
-````
+```
 
 
-<h3 id="declaration-order">声明顺序</h3>
+<h3 id="declaration-order">3-2. 声明顺序</h3>
 
 将相关的属性组合在一起，并且将对结构来说比较重要的属性（如定位或者盒模型）放在前面，先于排版、背景及颜色等属性。
 
-````css
+```css
 .declaration-order {
   /* Positioning */
   position: absolute;
@@ -205,32 +205,32 @@
   /* Misc */
   opacity: 1;
 }
-````
+```
 
 
-<h3 id="formatting-exceptions">细微偏移原则的情况</h3>
+<h3 id="formatting-exceptions">3-3. 细微偏移原则的情况</h3>
 
 某些情况下，允许细微偏移原则。
 
-<h4 id="prefixed-properties">带前缀的属性</h4>
+<h4 id="prefixed-properties">3-3-1. 带前缀的属性</h4>
 
 使用带前缀的属性时，缩进每一个属性，让其值对齐，方便多行编辑。
 
-````css
+```css
 .selector {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
 }
-````
+```
 
 Vim和Sublime Text等编辑器支持多行编辑。
 
-<h4 id="rules-with-single-declarations">大量包含单条声明的声明块</h4>
+<h4 id="rules-with-single-declarations">3-3-2. 大量包含单条声明的声明块</h4>
 
 对于大量仅包含单条声明的声明块，可以使用一种略微不同的单行格式。在这种情况下，在左大括号之后及右大括号之前都应该保留一个空格。
 
-````css
+```css
 .span1 { width: 60px; }
 .span2 { width: 140px; }
 .span3 { width: 220px; }
@@ -244,36 +244,36 @@ Vim和Sublime Text等编辑器支持多行编辑。
 .icon           { background-position: 0 0; }
 .icon-home      { background-position: 0 -20px; }
 .icon-account   { background-position: 0 -40px; }
-````
+```
 
 
-<h3 id="human-readable">可读性</h3>
+<h3 id="human-readable">3-4. 可读性</h3>
 
 代码由人书写及维护，确保你的代码具有描述性、很好的注释和他人易于上手。
 
-<h4 id="comments">注释</h4>
+<h4 id="comments">3-4-1. 注释</h4>
 
 好的代码注释交代了上下文或者目的，而不应该只是注明了组件、类的名字。
 
 **不好的例子：**
 
-````css
+```css
 /* Modal header */
 .modal-header {
   ...
 }
-````
+```
 
 **好的例子：**
 
-````css
+```css
 /* Wrapping element for .modal-title and .modal-close */
 .modal-header {
   ...
 }
-````
+```
 
-<h4 id="classes">class名</h4>
+<h4 id="classes">3-4-2. class名</h4>
 
 * 保持class名的小写和使用连字符(-)（不要使用下划线或者驼峰命名法）
 * 避免无意义的简写标记
@@ -284,21 +284,21 @@ Vim和Sublime Text等编辑器支持多行编辑。
 
 **不好的例子：**
 
-````css
+```css
 .t { ... }
 .red { ... }
 .header { ... }
-````
+```
 
 **好的例子：**
 
-````css
+```css
 .tweet { ... }
 .important { ... }
 .tweet-header { ... }
-````
+```
 
-<h4 id="selectors">选择器</h4>
+<h4 id="selectors">3-4-3. 选择器</h4>
 
 * 使用class名，而不是一般的元素标签
 * 保持它们足够的短及限制每个选择器元素的数量在三个以内
@@ -307,33 +307,33 @@ Vim和Sublime Text等编辑器支持多行编辑。
 
 **不好的例子：**
 
-````css
+```css
 span { ... }
 .page-container #stream .stream-item .tweet .tweet-header .username { ... }
 .avatar { ... }
-````
+```
 
 **好的例子：**
 
-````css
+```css
 .avatar { ... }
 .tweet-header .username { ... }
 .tweet .avatar { ... }
-````
+```
 
-<h3 id="javascript-hooks">JavaScript钩子</h3>
+<h3 id="javascript-hooks">3-5. JavaScript钩子</h3>
 
 千万不要用CSS class作为JavaScript钩子。如果你要把JavaScript和某些标记绑定起来的话，写一个JavaScript专用的class，划定一个前缀.js-的命名空间，例如`.js-toggle`，`.js-drag-and-drop`。这意味着我们可以通过class同时绑定JavaScript和CSS而不会因为冲突而引发麻烦。
 
-````html
+```html
 <th class="is-sortable  js-is-sortable">
 </th>
-````
+```
 
 上面的这个标记有两个class，你可以用其中一个来给这个可排序的表格栏添加样式，用另一个添加排序功能。
 
 
-<h3 id="organization">代码组织</h3>
+<h3 id="organization">3-6. 代码组织</h3>
 
 * 逻辑上对不同的代码进行分离
 * 不同的组件(component)的css尽量用不同的css文件（可以在build阶段用工具合并到一起）
