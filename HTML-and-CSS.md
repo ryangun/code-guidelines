@@ -114,7 +114,7 @@
 因此你的代码看起来像：
 
 ```html
-<a class="" id="" data-modal="" href="">Example link</a>
+<a id="" class="" data-modal="" href="">Example link</a>
 ```
 
 <h3 id="javascript-generated markup">2-5. JavaScript生成标签</h3>
