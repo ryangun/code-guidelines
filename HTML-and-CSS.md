@@ -106,8 +106,8 @@
 
 为了便于阅读代码，HTML属性应该按照特定的顺序书写
 
-* class
 * id
+* class
 * data-*
 * for|type|href
 
