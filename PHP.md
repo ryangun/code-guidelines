@@ -72,7 +72,7 @@ echo "<html>\n";
 // declaration
 function foo()
 {
-    // function body
+	// function body
 }
 ```
 
@@ -83,15 +83,15 @@ function foo()
 // declaration
 function foo()
 {
-    // function body
+	// function body
 }
 
 // conditional declaration is *not* a side effect
 if (! function_exists('bar')) {
-    function bar()
-    {
-        // function body
-    }
+	function bar()
+	{
+		// function body
+	}
 }
 ```
 
@@ -145,8 +145,8 @@ namespace Vendor\Model;
 
 class Foo
 {
-    const VERSION = '1.0';
-    const DATE_APPROVED = '2012-06-01';
+	const VERSION = '1.0';
+	const DATE_APPROVED = '2012-06-01';
 }
 ```
 
@@ -203,21 +203,21 @@ use OtherVendor\OtherPackage\BazClass;
 
 class Foo extends Bar implements FooInterface
 {
-    public function sampleFunction($a, $b = null)
-    {
-        if ($a === $b) {
-            bar();
-        } elseif ($a > $b) {
-            $foo->bar($arg1);
-        } else {
-            BazClass::bar($arg2, $arg3);
-        }
-    }
+	public function sampleFunction($a, $b = null)
+	{
+		if ($a === $b) {
+			bar();
+		} elseif ($a > $b) {
+			$foo->bar($arg1);
+		} else {
+			BazClass::bar($arg2, $arg3);
+		}
+	}
 
-    final public static function bar()
-    {
-        // method body
-    }
+	final public static function bar()
+	{
+		// method body
+	}
 }
 ```
 
@@ -227,8 +227,6 @@ class Foo extends Bar implements FooInterface
 ### 2.1 文件
 
 所有的PHP文件必须使用Unix LF(linefeed)换行符。
-
-所有PHP文件必须以一个空行结尾
 
 所有只包含PHP代码的文件省略`?>`结束标签
 
@@ -312,7 +310,7 @@ use OtherVendor\OtherPackage\BazClass;
 
 class ClassName extends ParentClass implements \ArrayAccess, \Countable
 {
-    // constants, properties, methods
+	// constants, properties, methods
 }
 ```
 
@@ -327,11 +325,11 @@ use BarClass as Bar;
 use OtherVendor\OtherPackage\BazClass;
 
 class ClassName extends ParentClass implements
-    \ArrayAccess,
-    \Countable,
-    \Serializable
+	\ArrayAccess,
+	\Countable,
+	\Serializable
 {
-    // constants, properties, methods
+	// constants, properties, methods
 }
 ```
 
@@ -353,7 +351,7 @@ namespace Vendor\Package;
 
 class ClassName
 {
-    public $foo = null;
+	public $foo = null;
 }
 ```
 
@@ -373,10 +371,10 @@ namespace Vendor\Package;
 
 class ClassName
 {
-    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
-    {
-        // method body
-    }
+	public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+	{
+		// method body
+	}
 }
 ``` 
 
@@ -392,10 +390,10 @@ namespace Vendor\Package;
 
 class ClassName
 {
-    public function foo($arg1, &$arg2, $arg3 = [])
-    {
-        // method body
-    }
+	public function foo($arg1, &$arg2, $arg3 = [])
+	{
+		// method body
+	}
 }
 ```
 
@@ -409,13 +407,13 @@ namespace Vendor\Package;
 
 class ClassName
 {
-    public function aVeryLongMethodName(
-        ClassTypeHint $arg1,
-        &$arg2,
-        array $arg3 = []
-    ) {
-        // method body
-    }
+	public function aVeryLongMethodName(
+		ClassTypeHint $arg1,
+		&$arg2,
+		array $arg3 = []
+	) {
+		// method body
+	}
 }
 ```
 
@@ -431,14 +429,14 @@ namespace Vendor\Package;
 
 abstract class ClassName
 {
-    protected static $foo;
+	protected static $foo;
 
-    abstract protected function zim();
+	abstract protected function zim();
 
-    final public static function bar()
-    {
-        // method body
-    }
+	final public static function bar()
+	{
+		// method body
+	}
 }
 ```
 
@@ -458,9 +456,9 @@ Foo::bar($arg2, $arg3);
 ```php
 <?php
 $foo->bar(
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 );
 ```
 
@@ -486,11 +484,11 @@ $foo->bar(
 ```php
 <?php
 if ($expr1) {
-    // if body
+	// if body
 } elseif ($expr2) {
-    // elseif body
+	// elseif body
 } else {
-    // else body;
+	// else body;
 }
 ```
 
@@ -504,20 +502,20 @@ if ($expr1) {
 ```php
 <?php
 switch ($expr) {
-    case 0:
-        echo 'First case, with a break';
-        break;
-    case 1:
-        echo 'Second case, which falls through';
-        // no break
-    case 2:
-    case 3:
-    case 4:
-        echo 'Third case, return instead of break';
-        return;
-    default:
-        echo 'Default case';
-        break;
+	case 0:
+		echo 'First case, with a break';
+		break;
+	case 1:
+		echo 'Second case, which falls through';
+		// no break
+	case 2:
+	case 3:
+	case 4:
+		echo 'Third case, return instead of break';
+		return;
+	default:
+		echo 'Default case';
+		break;
 }
 ```
 
@@ -529,7 +527,7 @@ switch ($expr) {
 ```php
 <?php
 while ($expr) {
-    // structure body
+	// structure body
 }
 ```
 
@@ -538,7 +536,7 @@ while ($expr) {
 ```php
 <?php
 do {
-    // structure body;
+	// structure body;
 } while ($expr);
 ```
 
@@ -549,18 +547,18 @@ do {
 ```php
 <?php
 for ($i = 0; $i < 10; $i++) {
-    // for body
+	// for body
 }
 ```
 
 ### 5.5. `foreach`
-    
+	
 `foreach`语句看起来像下面这样。注意小括号、空格和大括号的位置。
 
 ```php
 <?php
 foreach ($iterable as $key => $value) {
-    // foreach body
+	// foreach body
 }
 ```
 
@@ -571,11 +569,11 @@ foreach ($iterable as $key => $value) {
 ```php
 <?php
 try {
-    // try body
+	// try body
 } catch (FirstExceptionType $e) {
-    // catch body
+	// catch body
 } catch (OtherExceptionType $e) {
-    // catch body
+	// catch body
 }
 ```
 
@@ -597,11 +595,11 @@ try {
 ```php
 <?php
 $closureWithArgs = function ($arg1, $arg2) {
-    // body
+	// body
 };
 
 $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
-    // body
+	// body
 };
 ```
 
@@ -614,45 +612,45 @@ $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
 ```php
 <?php
 $longArgs_noVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) {
    // body
 };
 
 $noArgs_longVars = function () use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
 
 $longArgs_longVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
 
 $longArgs_shortVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) use ($var1) {
    // body
 };
 
 $shortArgs_longVars = function ($arg) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
@@ -663,11 +661,11 @@ $shortArgs_longVars = function ($arg) use (
 ```php
 <?php
 $foo->bar(
-    $arg1,
-    function ($arg2) use ($var1) {
-        // body
-    },
-    $arg3
+	$arg1,
+	function ($arg2) use ($var1) {
+		// body
+	},
+	$arg3
 );
 ```
 
